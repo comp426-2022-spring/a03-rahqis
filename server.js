@@ -48,6 +48,6 @@ app.use(function(req, res){
 });
 
 app.listen(port, () => {
-  console.log('App listening on port %PORT%'.replace('%PORT%', port))
+  console.log(`App listening on port %PORT%`.replace('%PORT%', port))
 })
  
