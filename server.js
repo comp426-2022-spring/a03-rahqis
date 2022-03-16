@@ -47,6 +47,6 @@ app.use(function(req, res){
     res.status(404).send('404 NOT FOUND')
 });
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
     console.log('App listening on port %PORT%'.replace('%PORT%', port))
 })
