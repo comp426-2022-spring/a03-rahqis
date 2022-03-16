@@ -36,7 +36,7 @@ app.get('/app/flip/call/heads', (req, res) => {
 
 app.get('/app/flips/:number', (req, res)=> {
     const result = coinFlips(req.params.number)
-    res.status(200).json( {'raw' : result, 'summary' : countFlips(result)})
+    res.status(200).json({'raw' : result, 'summary' : countFlips(result)})
 })
 
 app.get('/app/flip/', (req, res) => {
@@ -48,6 +48,5 @@ app.use(function(req, res){
 });
 
 app.listen(port, () => {
-  console.log(`App listening on port %PORT%`.replace('%PORT%', port))
+    console.log('App listening on port %PORT%'.replace('%PORT%', port))
 })
- 
