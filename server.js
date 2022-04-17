@@ -34,10 +34,12 @@ app.get('/app/flip/call/heads', (req, res) => {
       res.status(200).json({ 'call' : 'heads', 'flip': 'tails', 'result': result})
 })
 
-app.get('/app/flips/:number', (req, res)=> {
-    const result = coinFlips(req.params.number)
-    res.status(200).json({'raw' : result, 'summary' : countFlips(result)})
-})
+app.get('/app/flips/:number', (req, res) => {
+	var number = req.params.number
+  var raw = coinFlips(number)
+  var summary = countFlips(raw)
+  res.status(200).json({ 'raw' : raw , 'summary' : summary })
+});
 
 app.get('/app/flip/', (req, res) => {
     res.status(200).json({'flip': coinFlip()})
