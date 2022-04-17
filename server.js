@@ -34,11 +34,9 @@ app.get('/app/flip/call/heads', (req, res) => {
       res.status(200).json({ 'call' : 'heads', 'flip': 'tails', 'result': result})
 })
 
-app.get('/app/flips/:number', (req, res) => {
-	var number = req.params.number
-  var raw = coinFlips(number)
-  var summary = countFlips(raw)
-  res.status(200).json({ 'raw' : raw , 'summary' : summary })
+app.get('/app/flips/:number',(req, res) => {
+    res.status(200).json({'raw': coinFlips(req.params.number), 'summary': countFlips(coinFlips(req.params.number))});  
+    res.type("text/plain")
 });
 
 app.get('/app/flip/', (req, res) => {
